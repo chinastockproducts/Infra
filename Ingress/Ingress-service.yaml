@@ -17,7 +17,7 @@ spec:
           service:
             name: grafana
             port:
-              number: 3000
+              number: 3200
   - host: nexus.yourdomain.com
     http:
       paths:
@@ -107,4 +107,14 @@ spec:
           service:
             name: vault
             port:
-              number: 8200            
+              number: 8200
+  - host: goapp.yourdomain.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: goapp-go-k8s
+            port:
+              number: 3000  
